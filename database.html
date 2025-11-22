@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database | Mustafa Enes Kayacı</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              'charcoal': '#1a1614',
+              'mocha': '#2A2422',
+              'sand': '#E5D4B8',
+              'gold': '#D4AF37',
+              'gold-light': '#F4E5BC',
+              'glass-border': 'rgba(255, 255, 255, 0.08)',
+              'glass-surface': 'rgba(255, 255, 255, 0.03)',
+              'glass-surface-hover': 'rgba(255, 255, 255, 0.06)',
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'blob': 'blob 10s infinite',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        background-color: #1a1614;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+      }
+      
+      /* Grainy Noise Overlay */
+      .noise-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+      }
+
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-item.active {
+        background: rgba(255, 255, 255, 0.08);
+        border-left: 3px solid #D4AF37;
+        color: #fff;
+      }
+    </style>
+</head>
+<body class="text-gray-200 antialiased selection:bg-gold selection:text-charcoal relative min-h-screen">
+
+    <!-- Ambient Background Blobs -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-mocha/40 rounded-full blur-[120px] animate-blob mix-blend-overlay pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gold/10 rounded-full blur-[100px] animate-blob mix-blend-screen pointer-events-none" style="animation-delay: 2s"></div>
+
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Layout Wrapper -->
+    <div class="relative z-10 flex flex-col lg:flex-row max-w-[1400px] mx-auto min-h-screen">
+        
+        <!-- Left Sidebar Navigation -->
+        <aside class="w-full lg:w-1/4 lg:fixed lg:h-screen p-6 lg:p-10 flex flex-col z-20 bg-charcoal/80 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none border-b lg:border-b-0 border-white/10">
+            <!-- Branding -->
+            <div class="mb-10">
+                 <p class="text-sand text-[10px] font-bold uppercase tracking-[0.3em] mb-2">Digital Garden</p>
+                 <h1 class="text-2xl font-display font-bold text-white">Mustafa's <br/><span class="text-gold">Second Brain</span></h1>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="flex-1 space-y-2">
+                <a href="#tech-stack" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all text-sm font-medium">
+                    <i data-lucide="layers" class="w-4 h-4"></i> Tech Stack
+                </a>
+                <a href="#writings" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all text-sm font-medium">
+                    <i data-lucide="pen-tool" class="w-4 h-4"></i> Writings & Articles
+                </a>
+                <a href="#notes" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all text-sm font-medium">
+                    <i data-lucide="sticky-note" class="w-4 h-4"></i> Quick Notes
+                </a>
+                <a href="#certificates" class="nav-item flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400 hover:text-white hover:bg-white/5 transition-all text-sm font-medium">
+                    <i data-lucide="award" class="w-4 h-4"></i> Certificates (45)
+                </a>
+            </nav>
+
+            <!-- Back to Home -->
+            <div class="mt-auto pt-6 border-t border-white/10">
+                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 hover:scale-105 transition-all group">
+                    <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                    <span class="font-bold text-sm">Back to Portfolio</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="w-full lg:w-3/4 lg:ml-[25%] p-6 lg:p-12 pb-24 space-y-20">
+            
+            <!-- Section 1: Tech Stack -->
+            <section id="tech-stack" class="animate-fade-up">
+                <h2 class="text-3xl font-display font-bold text-white mb-8 flex items-center gap-3">
+                    <i data-lucide="cpu" class="w-6 h-6 text-gold"></i> The Arsenal
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Core -->
+                    <div class="glass-card rounded-3xl p-6">
+                        <h3 class="text-sand text-xs font-bold uppercase tracking-wider mb-4">Core Engineering</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="code-2" class="w-5 h-5"></i> <span>Python & TypeScript</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="database" class="w-5 h-5"></i> <span>PostgreSQL & SQL</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="layout" class="w-5 h-5"></i> <span>React & Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- AI / ML -->
+                    <div class="glass-card rounded-3xl p-6">
+                        <h3 class="text-sand text-xs font-bold uppercase tracking-wider mb-4">Artificial Intelligence</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="brain-circuit" class="w-5 h-5"></i> <span>TensorFlow & PyTorch</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="sparkles" class="w-5 h-5"></i> <span>Gemini API & OpenAI</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="bot" class="w-5 h-5"></i> <span>LangChain & Agents</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="glass-card rounded-3xl p-6">
+                        <h3 class="text-sand text-xs font-bold uppercase tracking-wider mb-4">Productivity & Ops</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="workflow" class="w-5 h-5"></i> <span>N8N & Zapier</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="container" class="w-5 h-5"></i> <span>Docker & Firebase</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-gray-300">
+                                <i data-lucide="terminal" class="w-5 h-5"></i> <span>Linux & Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Writings -->
+            <section id="writings" class="animate-fade-up delay-100">
+                <h2 class="text-3xl font-display font-bold text-white mb-8 flex items-center gap-3">
+                    <i data-lucide="feather" class="w-6 h-6 text-gold"></i> Writings & Thoughts
+                </h2>
+                
+                <div class="space-y-4">
+                    <!-- Article 1 -->
+                    <article class="glass-card rounded-3xl p-8 hover:border-gold/30 transition-all group cursor-pointer">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-[10px] font-bold text-gold border border-white/10">AI Research</span>
+                            <span class="text-xs text-gray-500">Oct 24, 2024 • 5 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-gold transition-colors">The Future of Autonomous AI Agents</h3>
+                        <p class="text-gray-400 leading-relaxed">Exploration of how large language models are evolving from simple chatbots into autonomous agents capable of executing complex workflows.</p>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="glass-card rounded-3xl p-8 hover:border-gold/30 transition-all group cursor-pointer">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-[10px] font-bold text-sand border border-white/10">Design Engineering</span>
+                            <span class="text-xs text-gray-500">Oct 10, 2024 • 3 min read</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-gold transition-colors">Building a Glassmorphism Portfolio</h3>
+                        <p class="text-gray-400 leading-relaxed">A technical breakdown of using Tailwind CSS backdrop filters and noise textures to create a premium "frosted glass" aesthetic.</p>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section 3: Quick Notes -->
+            <section id="notes" class="animate-fade-up delay-200">
+                <h2 class="text-3xl font-display font-bold text-white mb-8 flex items-center gap-3">
+                    <i data-lucide="sticky-note" class="w-6 h-6 text-gold"></i> Quick Notes
+                </h2>
+                
+                <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+                    <!-- Note 1 -->
+                    <div class="glass-card rounded-2xl p-6 break-inside-avoid bg-yellow-500/5 border-yellow-500/10">
+                        <p class="text-sm text-gray-300 font-mono mb-4">"Simplicity is prerequisite for reliability."</p>
+                        <span class="text-xs text-gold font-bold">- Edsger W. Dijkstra</span>
+                    </div>
+                    
+                    <!-- Note 2 -->
+                    <div class="glass-card rounded-2xl p-6 break-inside-avoid">
+                        <h4 class="text-white font-bold mb-2 text-sm">Deployment Checklist</h4>
+                        <ul class="list-disc list-inside text-xs text-gray-400 space-y-1">
+                            <li>Check ENV variables</li>
+                            <li>Optimize images (WebP)</li>
+                            <li>Audit accessibility</li>
+                            <li>Cache control headers</li>
+                        </ul>
+                    </div>
+
+                    <!-- Note 3 -->
+                    <div class="glass-card rounded-2xl p-6 break-inside-avoid">
+                        <h4 class="text-white font-bold mb-2 text-sm">CSS Grid Snippet</h4>
+                        <code class="block bg-black/30 p-3 rounded-lg text-[10px] text-green-400 font-mono">
+                            grid-template-columns:<br/>repeat(auto-fit, minmax(250px, 1fr));
+                        </code>
+                    </div>
+                    
+                     <!-- Note 4 -->
+                     <div class="glass-card rounded-2xl p-6 break-inside-avoid bg-blue-500/5 border-blue-500/10">
+                        <h4 class="text-white font-bold mb-2 text-sm">AI Idea</h4>
+                        <p class="text-xs text-gray-400">An app that scans your fridge and suggests recipes using Gemini Vision API. #WeekendProject</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Certificates -->
+            <section id="certificates" class="animate-fade-up delay-300">
+                <h2 class="text-3xl font-display font-bold text-white mb-8 flex items-center gap-3">
+                    <i data-lucide="award" class="w-6 h-6 text-gold"></i> Certification Vault
+                </h2>
+                
+                <div class="glass-card rounded-[32px] overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-white/5 text-sand uppercase tracking-wider text-xs border-b border-white/10">
+                                <tr>
+                                    <th class="p-6 font-medium">Certification Name</th>
+                                    <th class="p-6 font-medium">Issuer</th>
+                                    <th class="p-6 font-medium">Date</th>
+                                    <th class="p-6 font-medium text-right">Link</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                                <tr class="hover:bg-white/5 transition-colors">
+                                    <td class="p-6 text-white font-medium">Microsoft Certified: Azure AI Engineer</td>
+                                    <td class="p-6 text-gray-400">Microsoft</td>
+                                    <td class="p-6 text-gray-500">Jan 2024</td>
+                                    <td class="p-6 text-right"><a href="#" class="text-gold hover:underline">Verify</a></td>
+                                </tr>
+                                <tr class="hover:bg-white/5 transition-colors">
+                                    <td class="p-6 text-white font-medium">TensorFlow Developer Certificate</td>
+                                    <td class="p-6 text-gray-400">Google</td>
+                                    <td class="p-6 text-gray-500">Nov 2023</td>
+                                    <td class="p-6 text-right"><a href="#" class="text-gold hover:underline">Verify</a></td>
+                                </tr>
+                                <tr class="hover:bg-white/5 transition-colors">
+                                    <td class="p-6 text-white font-medium">AWS Certified Cloud Practitioner</td>
+                                    <td class="p-6 text-gray-400">Amazon AWS</td>
+                                    <td class="p-6 text-gray-500">Aug 2023</td>
+                                    <td class="p-6 text-right"><a href="#" class="text-gold hover:underline">Verify</a></td>
+                                </tr>
+                                <tr class="hover:bg-white/5 transition-colors">
+                                    <td class="p-6 text-white font-medium">Meta Backend Developer Professional</td>
+                                    <td class="p-6 text-gray-400">Meta</td>
+                                    <td class="p-6 text-gray-500">June 2023</td>
+                                    <td class="p-6 text-right"><a href="#" class="text-gold hover:underline">Verify</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        
+        // Simple active state for sidebar navigation based on scroll
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
