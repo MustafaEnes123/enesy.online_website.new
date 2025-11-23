@@ -9,7 +9,7 @@ export const ProfileSection: React.FC = () => {
         <div className="relative">
           <div className="h-28 w-28 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl">
             <img 
-              src="https://picsum.photos/300/300?grayscale" 
+              src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=400&auto=format&fit=crop" 
               alt="Profile" 
               className="h-full w-full object-cover"
             />
@@ -28,17 +28,17 @@ export const ProfileSection: React.FC = () => {
       <div className="mt-auto space-y-5 z-10 relative">
         <div>
             <h1 className="text-5xl md:text-6xl font-display font-bold text-white tracking-tight leading-[0.9] mb-4">
-              Alex <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-gold">Morgan.</span>
+              Mustafa Enes <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-gold">Kayacı.</span>
             </h1>
             <p className="text-lg text-gray-400 font-light max-w-sm leading-relaxed">
-              Creative Technologist crafting immersive digital experiences with <span className="text-sand">precision</span> and <span className="text-sand">soul</span>.
+              AI Engineer | Researcher
             </p>
         </div>
         
         <div className="flex flex-wrap gap-3 pt-2">
             <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/5 text-sm text-gray-300 hover:bg-white/10 transition-colors">
                 <Globe size={14} className="text-gold"/>
-                Based in Kyoto
+                Türkiye / Worldwide
             </span>
         </div>
       </div>

@@ -22,7 +22,7 @@ const App: React.FC = () => {
         <header className="flex justify-between items-end mb-12 animate-fade-up" style={{ animationDelay: '100ms' }}>
             <div>
                 <p className="text-sand text-xs font-bold uppercase tracking-[0.3em] mb-2">Portfolio 2025</p>
-                <h2 className="text-xl font-medium text-white/80">The Digital Archive</h2>
+                <h2 className="text-xl font-medium text-white/80">AI Engineer & Researcher</h2>
             </div>
             <div className="hidden md:block h-px w-32 bg-gradient-to-r from-transparent to-white/20" />
         </header>
@@ -67,11 +67,11 @@ const App: React.FC = () => {
             {/* 7. Contact Footer */}
             <BentoCard className="col-span-1 md:col-span-3 lg:col-span-4 flex flex-col md:flex-row items-center justify-between gap-8 py-12 px-10" delay={800}>
                 <div className="text-center md:text-left">
-                    <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-2">Let's build the future.</h2>
-                    <p className="text-gray-400">Open for select collaborations in Q4 2025.</p>
+                    <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-2">Have a project in mind?</h2>
+                    <p className="text-gray-400">Open for collaborations and learning opportunities.</p>
                 </div>
                 <button className="group relative px-8 py-4 rounded-full bg-white text-charcoal font-bold text-lg transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.5)] flex items-center gap-3 overflow-hidden">
-                    <span className="relative z-10">Get in Touch</span>
+                    <span className="relative z-10">Contact Me</span>
                     <Mail size={18} className="relative z-10 group-hover:rotate-12 transition-transform" />
                     <div className="absolute inset-0 bg-sand transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                 </button>
@@ -80,8 +80,8 @@ const App: React.FC = () => {
         </main>
         
         <footer className="mt-20 flex justify-between items-center text-white/20 text-xs font-medium uppercase tracking-wider">
-            <p>© 2025 Alex Morgan</p>
-            <p>Designed in React</p>
+            <p>© 2025 Mustafa Enes Kayacı</p>
+            <p>Built with Glassmorphism</p>
         </footer>
 
       </div>
