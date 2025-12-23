@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | Cortex App</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              'charcoal': '#1a1614',
+              'mocha': '#2A2422',
+              'sand': '#E5D4B8',
+              'gold': '#D4AF37',
+              'glass-border': 'rgba(255, 255, 255, 0.08)',
+              'glass-surface': 'rgba(255, 255, 255, 0.03)',
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'blob': 'blob 10s infinite',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        background-color: #1a1614;
+        overflow-x: hidden;
+      }
+      .noise-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    </style>
+</head>
+<body class="text-gray-200 antialiased selection:bg-gold selection:text-charcoal relative min-h-screen">
+
+    <!-- Ambient Background Blobs -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-mocha/40 rounded-full blur-[120px] animate-blob mix-blend-overlay pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gold/10 rounded-full blur-[100px] animate-blob mix-blend-screen pointer-events-none" style="animation-delay: 2s"></div>
+
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <main class="relative z-10 w-full max-w-4xl mx-auto p-6 md:p-16">
+        <div class="glass-card rounded-[40px] p-8 md:p-12 animate-fade-up">
+            <header class="mb-10 border-b border-white/10 pb-8 text-center">
+                <div class="inline-block p-3 bg-gold/10 rounded-2xl text-gold mb-4 border border-gold/20">
+                    <i data-lucide="shield-check" class="w-8 h-8"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-display font-bold text-white mb-4">Privacy Policy</h1>
+                <p class="text-sand text-xs font-bold uppercase tracking-widest">Effective Date: 2025-12-23</p>
+            </header>
+
+            <div class="prose prose-invert prose-sand max-w-none space-y-8 text-gray-300 leading-relaxed">
+                <section>
+                    <p>This privacy policy applies to the Cortex app (hereby referred to as "Application") for mobile devices that was created by Raw Logic (hereby referred to as "Service Provider") as a Free service. This service is intended for use "AS IS".</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Information Collection and Use</h2>
+                    <p>The Application collects information when you download and use it. This information may include information such as:</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-4">
+                        <li>Your device's Internet Protocol address (e.g. IP address)</li>
+                        <li>The pages of the Application that you visit, the time and date of your visit, the time spent on those pages</li>
+                        <li>The time spent on the Application</li>
+                        <li>The operating system you use on your mobile device</li>
+                    </ul>
+                    <p class="mt-4">The Application does not gather precise information about the location of your mobile device.</p>
+                    <p class="mt-4">The Service Provider may use the information you provided to contact you from time to time to provide you with important information, required notices and marketing promotions.</p>
+                    <p class="mt-4">For a better experience, while using the Application, the Service Provider may require you to provide us with certain personally identifiable information, including but not limited to Email, personal bookmarks, sending Google AI models. The information that the Service Provider request will be retained by them and used as described in this privacy policy.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Third Party Access</h2>
+                    <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider in improving the Application and their service. The Service Provider may share your information with third parties in the ways that are described in this privacy statement.</p>
+                    <p class="mt-4 font-bold text-white">Third-Party Service Providers:</p>
+                    <ul class="list-disc pl-5 space-y-2 mt-2">
+                        <li><a href="https://www.google.com/policies/privacy/" target="_blank" class="text-gold hover:underline">Google Play Services</a></li>
+                    </ul>
+                    <p class="mt-4 italic">The Service Provider may disclose User Provided and Automatically Collected Information as required by law, to protect rights/safety, or with trusted service providers who adhere to these rules.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Use of Artificial Intelligence</h2>
+                    <p>The Application uses Artificial Intelligence (AI) technologies to enhance user experience and provide certain features. The AI components may process user data to deliver personalized content, recommendations, or automated functionalities. All AI processing is performed in accordance with this privacy policy and applicable laws. If you have questions about the AI features or data processing, please contact the Service Provider.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Opt-Out Rights</h2>
+                    <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the standard uninstall processes as may be available as part of your mobile device or via the mobile application marketplace or network.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Data Retention Policy</h2>
+                    <p>The Service Provider will retain User Provided data for as long as you use the Application and for a reasonable time thereafter. If you'd like them to delete User Provided Data that you have provided via the Application, please contact them at <a href="mailto:admin@enesy.online" class="text-gold hover:underline">admin@enesy.online</a> and they will respond in a reasonable time.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Children</h2>
+                    <p>The Service Provider does not use the Application to knowingly solicit data from or market to children under the age of 13. The Application does not address anyone under the age of 13. In the case the Service Provider discover that a child under 13 has provided personal information, the Service Provider will immediately delete this from their servers.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Security</h2>
+                    <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service Provider provides physical, electronic, and procedural safeguards to protect information the Service Provider processes and maintains.</p>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Changes</h2>
+                    <p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.</p>
+                </section>
+
+                <section class="border-t border-white/10 pt-8 mt-10">
+                    <h2 class="text-2xl font-display font-bold text-white mb-4">Contact Us</h2>
+                    <p>If you have any questions regarding privacy while using the Application, or have questions about the practices, please contact the Service Provider via email at <a href="mailto:admin@enesy.online" class="text-gold hover:underline">admin@enesy.online</a>.</p>
+                </section>
+            </div>
+            
+            <div class="mt-12 text-center">
+                 <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all text-sm group">
+                    <i data-lucide="home" class="w-4 h-4"></i>
+                    Return to Site
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-10 text-center text-white/20 text-[10px] uppercase tracking-[0.2em]">
+        &copy; 2025 Raw Logic • Cortex App Privacy Policy
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
