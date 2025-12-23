@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete Account | Mustafa Enes Kayacı</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              'charcoal': '#1a1614',
+              'mocha': '#2A2422',
+              'sand': '#E5D4B8',
+              'gold': '#D4AF37',
+              'glass-border': 'rgba(255, 255, 255, 0.08)',
+              'glass-surface': 'rgba(255, 255, 255, 0.03)',
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'blob': 'blob 10s infinite',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body {
+        background-color: #1a1614;
+        overflow-x: hidden;
+      }
+      .noise-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50;
+        opacity: 0.05;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    </style>
+</head>
+<body class="text-gray-200 antialiased selection:bg-gold selection:text-charcoal relative min-h-screen flex flex-col items-center justify-center">
+
+    <!-- Ambient Background Blobs -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-mocha/40 rounded-full blur-[120px] animate-blob mix-blend-overlay pointer-events-none"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gold/10 rounded-full blur-[100px] animate-blob mix-blend-screen pointer-events-none" style="animation-delay: 2s"></div>
+
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <main class="relative z-10 w-full max-w-2xl p-6">
+        <div class="glass-card rounded-[40px] p-10 md:p-16 text-center animate-fade-up shadow-2xl">
+            <div class="inline-flex items-center justify-center p-5 bg-red-500/10 rounded-3xl text-red-400 mb-8 border border-red-500/20">
+                <i data-lucide="user-x" class="w-10 h-10"></i>
+            </div>
+            
+            <h1 class="text-3xl md:text-4xl font-display font-bold text-white mb-6">Account Deletion</h1>
+            
+            <p class="text-lg text-gray-300 leading-relaxed mb-10">
+                To request deletion of your account and associated data, please contact us at: 
+                <br/>
+                <a href="mailto:admin@enesy.online" class="text-gold font-bold hover:text-white transition-colors underline decoration-gold/30 underline-offset-4">
+                    admin@enesy.online
+                </a>
+            </p>
+
+            <div class="pt-8 border-t border-white/10">
+                <a href="index.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition-all text-sm group">
+                    <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+                    Back to Homepage
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="relative z-10 py-10 text-center text-white/20 text-[10px] uppercase tracking-[0.2em]">
+        &copy; 2025 Raw Logic • Mustafa Enes Kayacı
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
