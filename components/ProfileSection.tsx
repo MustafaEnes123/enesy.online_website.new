@@ -1,6 +1,6 @@
 import React from 'react';
 import { BentoCard } from './BentoCard';
-import { ArrowUpRight, Globe } from 'lucide-react';
+import { ArrowUpRight, Globe, Briefcase } from 'lucide-react';
 
 export const ProfileSection: React.FC = () => {
   return (
@@ -20,8 +20,9 @@ export const ProfileSection: React.FC = () => {
           </div>
         </div>
         
-        <button className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:scale-110 transition-all text-sand">
-            <ArrowUpRight size={24} />
+        <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-[10px] font-bold text-gold uppercase tracking-widest hover:bg-gold/20 transition-all">
+            <Briefcase size={12} />
+            Positions
         </button>
       </div>
       
@@ -31,7 +32,7 @@ export const ProfileSection: React.FC = () => {
               Mustafa Enes <br/> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sand to-gold">Kayacı.</span>
             </h1>
             <p className="text-lg text-gray-400 font-light max-w-sm leading-relaxed">
-              AI Engineer | Researcher
+              AI Engineer | Researcher | Student at Arizona State University
             </p>
         </div>
         

@@ -5,7 +5,7 @@ import { ProjectGallery } from './components/ProjectGallery';
 import { SetupGallery } from './components/SetupGallery';
 import { StoreLink } from './components/StoreLink';
 import { BentoCard } from './components/BentoCard';
-import { Award, Code, Mail, Zap } from 'lucide-react';
+import { Award, Code, Mail, Zap, Terminal, Users, ArrowRight } from 'lucide-react';
 
 const App: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const App: React.FC = () => {
         {/* Header */}
         <header className="flex justify-between items-end mb-12 animate-fade-up" style={{ animationDelay: '100ms' }}>
             <div>
-                <p className="text-sand text-xs font-bold uppercase tracking-[0.3em] mb-2">Portfolio 2025</p>
+                <p class="text-sand text-xs font-bold uppercase tracking-[0.3em] mb-2">Portfolio 2026</p>
                 <h2 className="text-xl font-medium text-white/80">AI Engineer & Researcher</h2>
             </div>
             <div className="hidden md:block h-px w-32 bg-gradient-to-r from-transparent to-white/20" />
@@ -36,26 +36,38 @@ const App: React.FC = () => {
             {/* 2. Stats Column */}
             <StatWidget 
                 label="Experience" 
-                value="8+" 
+                value="9+" 
                 icon={<Code size={20} />} 
                 delay={150}
             />
             <StatWidget 
-                label="Honors" 
-                value="14" 
+                label="Certificates" 
+                value="45+" 
                 icon={<Award size={20} />} 
                 delay={200}
             />
 
-            {/* 3. Text Block (Quote) */}
-            <BentoCard className="col-span-1 md:col-span-2 flex flex-col justify-center p-10 bg-gradient-to-br from-white/5 to-transparent" delay={250}>
-                 <Zap size={24} className="text-gold mb-4" />
-                <blockquote className="text-2xl md:text-3xl font-display font-medium leading-snug text-white">
-                    "Simplicity is the ultimate <span className="text-gray-500 italic font-serif">sophistication</span>."
-                </blockquote>
+            {/* 3. Hack Club Card */}
+            <BentoCard className="col-span-1 md:col-span-2 flex flex-col justify-between bg-gradient-to-br from-red-500/10 to-transparent border-red-500/10 hover:border-red-500/30" delay={250}>
+                 <div className="absolute -right-4 -top-4 text-red-500/5 group-hover:text-red-500/10 transition-colors">
+                    <Terminal size={120} />
+                </div>
+                <div className="relative z-10">
+                    <div className="flex items-center gap-3 mb-4">
+                        <div className="p-2.5 bg-red-500 rounded-xl text-white">
+                            <Users size={20} />
+                        </div>
+                        <h3 className="text-2xl font-display font-bold text-white">Raw Logic Hack Club</h3>
+                    </div>
+                    <p className="text-gray-400 text-sm max-w-md">Non-profit development field for students to improve themselves with Hack Club.</p>
+                </div>
+                <div className="mt-6 flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-widest">
+                    <span>Coming Soon</span>
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </div>
             </BentoCard>
 
-            {/* 4. Project Gallery Mixed Grid */}
+            {/* 4. Project Gallery Mixed Grid (Updated with Cortex App internal) */}
             <ProjectGallery />
 
             {/* 5. Wide Setup Gallery */}
@@ -71,7 +83,7 @@ const App: React.FC = () => {
                     <p className="text-gray-400">Open for collaborations and learning opportunities.</p>
                 </div>
                 <button className="group relative px-8 py-4 rounded-full bg-white text-charcoal font-bold text-lg transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.5)] flex items-center gap-3 overflow-hidden">
-                    <span className="relative z-10">Contact Me</span>
+                    <span class="relative z-10">Contact Me</span>
                     <Mail size={18} className="relative z-10 group-hover:rotate-12 transition-transform" />
                     <div className="absolute inset-0 bg-sand transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                 </button>
@@ -80,7 +92,7 @@ const App: React.FC = () => {
         </main>
         
         <footer className="mt-20 flex justify-between items-center text-white/20 text-xs font-medium uppercase tracking-wider">
-            <p>© 2025 Mustafa Enes Kayacı</p>
+            <p>© 2026 Mustafa Enes Kayacı</p>
             <p>Built with Glassmorphism</p>
         </footer>
 

@@ -93,7 +93,6 @@
         overflow-x: hidden;
       }
       
-      /* Grainy Noise Overlay */
       .noise-overlay {
         position: fixed;
         top: 0;
@@ -106,44 +105,16 @@
         background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
       }
 
-      /* Hide Scrollbar but allow scroll */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-      /* Utility for animation delay */
       .delay-100 { animation-delay: 100ms; }
       .delay-200 { animation-delay: 200ms; }
-      .delay-300 { animation-delay: 300ms; }
-      .delay-400 { animation-delay: 400ms; }
-      .delay-500 { animation-delay: 500ms; }
-      .delay-600 { animation-delay: 600ms; }
-      .delay-700 { animation-delay: 700ms; }
-      .delay-800 { animation-delay: 800ms; }
 
-      /* Modal Styles */
-      .modal-overlay {
-        transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
-      }
-      .modal-overlay.hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-      .modal-overlay.active {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-      }
-      
-      /* Prevent scroll when modal is open */
-      body.modal-open {
-        overflow: hidden;
-      }
+      .modal-overlay { transition: opacity 0.3s ease-out, visibility 0.3s ease-out; }
+      .modal-overlay.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+      .modal-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
+      body.modal-open { overflow: hidden; }
     </style>
 <script type="importmap">
 {
@@ -163,16 +134,14 @@
     <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-gold/10 rounded-full blur-[100px] animate-blob mix-blend-screen" style="animation-delay: 2s"></div>
     <div class="fixed top-[20%] right-[10%] w-[20vw] h-[20vw] bg-sand/10 rounded-full blur-[80px] animate-blob" style="animation-delay: 4s"></div>
     
-    <!-- Noise Texture -->
     <div class="noise-overlay"></div>
 
-    <!-- Main Content -->
     <div class="relative z-10 w-full max-w-[1200px] mx-auto p-6 md:p-10 lg:p-16">
         
         <!-- Header -->
         <header class="flex justify-between items-end mb-12 animate-fade-up delay-100 opacity-0" style="animation-fill-mode: forwards;">
             <div>
-                <p class="text-sand text-xs font-bold uppercase tracking-[0.3em] mb-2">Portfolio 2025</p>
+                <p class="text-sand text-xs font-bold uppercase tracking-[0.3em] mb-2">Portfolio 2026</p>
                 <h2 class="text-xl font-medium text-white/80">AI Engineer & Researcher</h2>
             </div>
             <div class="hidden md:block h-px w-32 bg-gradient-to-r from-transparent to-white/20"></div>
@@ -182,8 +151,7 @@
         <main class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 auto-rows-[minmax(180px,auto)] gap-5">
             
             <!-- 1. Profile (2x2) -->
-            <article class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 flex flex-col justify-between min-h-[400px] group relative overflow-hidden rounded-[32px] backdrop-blur-[24px] bg-glass-surface border border-glass-border p-8 shadow-lg hover:shadow-gold/5 hover:bg-glass-surface-hover hover:border-white/10 hover:-translate-y-1 transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) cursor-pointer opacity-0 animate-fade-up">
-                <!-- Inner Glow -->
+            <article class="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 flex flex-col justify-between min-h-[400px] group relative overflow-hidden rounded-[32px] backdrop-blur-[24px] bg-glass-surface border border-glass-border p-8 shadow-lg hover:shadow-gold/5 hover:bg-glass-surface-hover hover:border-white/10 hover:-translate-y-1 transition-all duration-500 cubic-bezier(0.16, 1, 0.3, 1) opacity-0 animate-fade-up">
                 <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none bg-gradient-to-tr from-white/5 to-transparent"></div>
                 
                 <div class="flex justify-between items-start z-10 relative">
@@ -197,8 +165,9 @@
                         </div>
                     </div>
                     
-                    <button onclick="openModal('modal-contact')" class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:scale-110 transition-all text-sand">
-                        <i data-lucide="arrow-up-right" class="w-6 h-6"></i>
+                    <button onclick="openModal('modal-positions')" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold/10 border border-gold/20 text-xs font-bold text-gold uppercase tracking-widest hover:bg-gold/20 transition-all">
+                        <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+                        Positions
                     </button>
                 </div>
                 
@@ -208,7 +177,7 @@
                             Mustafa Enes Kayacı.
                         </h1>
                         <p class="text-lg text-gray-400 font-light max-w-sm leading-relaxed">
-                            AI Engineer | Researcher
+                            AI Engineer | Researcher | Student at Arizona State University
                         </p>
                     </div>
                     
@@ -219,13 +188,11 @@
                         </span>
                     </div>
                 </div>
-                
-                <!-- Decorative Blob inside card -->
                 <div class="absolute -right-10 -top-10 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
             </article>
 
-            <!-- 2. Stats Column: Certificates (Link to Database) -->
-            <a href="database.html" target="_blank" class="col-span-1 flex flex-col justify-center items-start gap-1 relative overflow-hidden group rounded-[32px] backdrop-blur-[24px] bg-glass-surface border border-glass-border p-8 shadow-lg hover:shadow-gold/5 hover:bg-glass-surface-hover hover:border-white/10 hover:-translate-y-1 transition-all duration-500 opacity-0 animate-fade-up delay-100 cursor-pointer block">
+            <!-- 2. Certificates (Stats Widget) -->
+            <a href="database.html" target="_blank" class="col-span-1 flex flex-col justify-center items-start gap-1 relative overflow-hidden group rounded-[32px] backdrop-blur-[24px] bg-glass-surface border border-glass-border p-8 shadow-lg hover:shadow-gold/5 hover:bg-glass-surface-hover hover:border-white/10 hover:-translate-y-1 transition-all duration-500 opacity-0 animate-fade-up delay-100 block">
                 <div class="absolute top-4 right-4 text-white/20 group-hover:text-gold transition-colors duration-500 group-hover:scale-110 transform">
                    <i data-lucide="award" class="w-5 h-5"></i>
                 </div>
@@ -237,28 +204,42 @@
                 <div class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-gold/10 to-transparent rounded-tl-3xl"></div>
             </a>
 
-            <!-- 3. Stats Column: Projects -->
+            <!-- 3. Projects Count -->
             <article class="col-span-1 flex flex-col justify-center items-start gap-1 relative overflow-hidden group rounded-[32px] backdrop-blur-[24px] bg-glass-surface border border-glass-border p-8 shadow-lg hover:shadow-gold/5 hover:bg-glass-surface-hover hover:border-white/10 hover:-translate-y-1 transition-all duration-500 opacity-0 animate-fade-up delay-200">
                 <div class="absolute top-4 right-4 text-white/20 group-hover:text-gold transition-colors duration-500 group-hover:scale-110 transform">
                    <i data-lucide="folder" class="w-5 h-5"></i>
                 </div>
-                <span class="text-5xl md:text-6xl font-display font-bold text-white tracking-tighter">4</span>
+                <span class="text-5xl md:text-6xl font-display font-bold text-white tracking-tighter">5</span>
                 <span class="text-xs uppercase tracking-widest font-medium text-sand/60 border-t border-white/10 pt-2 mt-1 w-full">Projects</span>
                 <div class="absolute bottom-0 right-0 w-24 h-24 bg-gradient-to-tl from-gold/10 to-transparent rounded-tl-3xl"></div>
             </article>
 
-            <!-- 4. Quote Block -->
-            <article class="col-span-1 md:col-span-2 flex flex-col justify-center p-10 bg-gradient-to-br from-white/5 to-transparent rounded-[32px] border border-glass-border shadow-lg opacity-0 animate-fade-up delay-200">
-                <i data-lucide="zap" class="w-6 h-6 text-gold mb-4"></i>
-                <blockquote class="text-xl md:text-2xl font-display font-medium leading-snug text-white">
-                    "Artificial Intelligence is the <span class="text-sand italic font-serif">mission</span>. Actual Intelligence is the <span class="text-sand italic font-serif">method</span>."
-                </blockquote>
-            </article>
+            <!-- 4. Hack Club (NEW) -->
+            <a href="hackclub.html" class="col-span-1 md:col-span-2 flex flex-col justify-between p-8 rounded-[32px] border border-glass-border bg-gradient-to-br from-red-500/10 to-transparent hover:border-red-500/30 transition-all opacity-0 animate-fade-up delay-200 group overflow-hidden relative">
+                <div class="absolute -right-4 -top-4 text-red-500/10 group-hover:text-red-500/20 transition-colors">
+                    <i data-lucide="terminal" class="w-32 h-32"></i>
+                </div>
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-2.5 bg-red-500 rounded-xl text-white shadow-lg shadow-red-500/20">
+                            <i data-lucide="users" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white">Raw Logic Hack Club</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-md">
+                        A non-profit development field where students improve themselves through hands-on hacking and collaboration with the global Hack Club community.
+                    </p>
+                </div>
+                <div class="relative z-10 mt-6 flex items-center gap-2 text-red-400 text-xs font-bold uppercase tracking-widest">
+                    <span>Explore Space</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
 
-            <!-- 5. Project: Android App (Link to Bookmarking Page) -->
-            <a href="bookmarking.html" target="_blank" class="col-span-1 md:col-span-1 row-span-2 group p-0 overflow-hidden rounded-[32px] border border-glass-border relative opacity-0 animate-fade-up delay-300 cursor-pointer block bg-glass-surface hover:border-white/20 hover:shadow-xl transition-all">
+            <!-- 5. Cortex App (Renamed) -->
+            <a href="bookmarking.html" class="col-span-1 md:col-span-1 row-span-2 group p-0 overflow-hidden rounded-[32px] border border-glass-border relative opacity-0 animate-fade-up delay-300 cursor-pointer block bg-glass-surface hover:border-white/20 hover:shadow-xl transition-all">
                 <div class="absolute inset-0 w-full h-full">
-                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=800&auto=format&fit=crop" alt="Android App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80 grayscale group-hover:grayscale-0" />
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=800&auto=format&fit=crop" alt="Cortex App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-80 grayscale group-hover:grayscale-0" />
                     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-charcoal/50 to-charcoal/90"></div>
                 </div>
                 <div class="absolute top-4 right-4 p-2 bg-charcoal/50 backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/10">
@@ -266,19 +247,16 @@
                 </div>
                 <div class="absolute bottom-0 left-0 p-6 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                     <span class="text-[10px] font-bold text-gold uppercase tracking-[0.2em] mb-2 block border-b border-white/10 pb-2 w-fit">Kotlin & Firebase</span>
-                    <h3 class="text-2xl font-display font-bold text-white leading-tight">Android Bookmarking App</h3>
+                    <h3 class="text-2xl font-display font-bold text-white leading-tight">Cortex App</h3>
                 </div>
             </a>
 
-            <!-- 6. Project: AI Article (Updated) -->
+            <!-- 6. AI Article -->
             <a href="#" class="col-span-1 md:col-span-1 group p-0 overflow-hidden rounded-[32px] border border-glass-border relative min-h-[240px] opacity-0 animate-fade-up delay-400 cursor-pointer block bg-glass-surface hover:border-white/20 hover:shadow-xl transition-all">
                 <div class="absolute inset-0 w-full h-full">
-                    <!-- Updated Image: Abstract Academic/Research Texture -->
                     <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=800&auto=format&fit=crop" alt="AI Research" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-50 group-hover:opacity-80 grayscale group-hover:grayscale-0" />
                     <div class="absolute inset-0 bg-gradient-to-b from-charcoal/30 via-charcoal/50 to-charcoal/90"></div>
                 </div>
-                
-                <!-- Date Badge -->
                 <div class="absolute top-4 left-4 px-3 py-1.5 bg-gold/10 backdrop-blur-md border border-gold/30 rounded-full flex items-center gap-2 shadow-[0_0_15px_-5px_rgba(212,175,55,0.3)] z-20">
                      <span class="relative flex h-1.5 w-1.5">
                           <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
@@ -286,18 +264,15 @@
                     </span>
                     <span class="text-[9px] font-bold text-gold uppercase tracking-wider">Coming May 2026</span>
                 </div>
-
                 <div class="absolute top-4 right-4 p-2 bg-charcoal/50 backdrop-blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-white/10">
                     <i data-lucide="lock" class="w-4 h-4 text-white"></i>
                 </div>
-                
                 <div class="absolute bottom-0 left-0 p-6 w-full">
-                    <span class="text-[10px] font-bold text-sand uppercase tracking-[0.2em] mb-1 block">Academic Research</span>
                     <h3 class="text-xl font-display font-bold text-white leading-tight">AI in Education Article</h3>
                 </div>
             </a>
 
-            <!-- 8. Setup Gallery (Link to Gallery Page) -->
+            <!-- 8. Themes Gallery -->
             <a href="gallery.html" target="_blank" class="col-span-1 md:col-span-2 lg:col-span-2 flex flex-col justify-center overflow-hidden rounded-[32px] backdrop-blur-[24px] bg-glass-surface border border-glass-border p-8 shadow-lg opacity-0 animate-fade-up delay-600 cursor-pointer hover:border-white/20 hover:shadow-gold/5 transition-all group block">
                 <div class="flex justify-between items-center mb-6 px-2 z-10 relative">
                     <div class="flex items-center gap-3">
@@ -306,63 +281,50 @@
                         </div>
                         <div>
                             <h3 class="text-lg font-display font-bold text-white leading-none group-hover:text-gold transition-colors">Themes & Setups</h3>
-                            <p class="text-xs text-gray-500 mt-1">Desktop Wallpapers & Phone Configurations</p>
+                            <p class="text-xs text-gray-500 mt-1">Desktop & Phone Visuals</p>
                         </div>
                     </div>
                     <div class="p-2 bg-white/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
                         <i data-lucide="maximize-2" class="w-4 h-4 text-white"></i>
                     </div>
                 </div>
-                
-                <!-- Preview Strip -->
                 <div class="flex gap-5 overflow-hidden px-2 relative z-10 mask-linear">
-                    <!-- Item 1 -->
                     <div class="flex-none w-60 h-40 rounded-2xl overflow-hidden relative border border-white/5">
-                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=800&auto=format&fit=crop" alt="Setup V1" class="w-full h-full object-cover" />
+                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" />
                     </div>
-                    <!-- Item 2 -->
                     <div class="flex-none w-60 h-40 rounded-2xl overflow-hidden relative border border-white/5">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" alt="Dark Wallpaper" class="w-full h-full object-cover" />
+                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover" />
                     </div>
                 </div>
-
-                <!-- Background Ambient -->
-                <div class="absolute -left-10 bottom-0 w-40 h-40 bg-sand/5 rounded-full blur-3xl pointer-events-none"></div>
             </a>
 
-            <!-- 9. Store Link (Link) -->
+            <!-- 9. Store -->
             <a href="https://enesphere72.gumroad.com/" target="_blank" class="col-span-1 bg-gradient-to-br from-sand to-gold text-charcoal flex flex-col justify-between group border-none rounded-[32px] p-8 shadow-lg cursor-pointer opacity-0 animate-fade-up delay-700 hover:scale-[1.02] transition-transform">
                 <div class="flex justify-between items-start">
                     <div class="p-2 bg-charcoal/10 rounded-full">
                          <i data-lucide="shopping-bag" class="w-6 h-6 text-charcoal"></i>
                     </div>
-                    <div class="w-8 h-8 rounded-full bg-charcoal/10 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                        <i data-lucide="arrow-right" class="w-4 h-4 text-charcoal"></i>
-                    </div>
+                    <i data-lucide="arrow-right" class="w-5 h-5 text-charcoal group-hover:translate-x-1 transition-transform"></i>
                 </div>
                 <div>
                     <h3 class="text-2xl font-display font-bold mb-1">Gumroad Store</h3>
-                    <p class="text-charcoal/70 text-xs font-medium uppercase tracking-wide">Digital Products & Assets</p>
+                    <p class="text-charcoal/70 text-xs font-medium uppercase tracking-wide">Assets</p>
                 </div>
             </a>
 
-             <!-- 9.5 Database Widget (NOW CLICKABLE) -->
-            <a href="database.html" target="_blank" class="col-span-1 flex flex-col justify-between group rounded-[32px] backdrop-blur-[24px] bg-glass-surface border border-glass-border p-8 shadow-lg hover:shadow-gold/5 hover:bg-glass-surface-hover hover:border-white/10 hover:-translate-y-1 transition-all duration-500 opacity-0 animate-fade-up delay-700 cursor-pointer block">
+             <!-- 9.5 Database -->
+            <a href="database.html" target="_blank" class="col-span-1 flex flex-col justify-between group rounded-[32px] backdrop-blur-[24px] bg-glass-surface border border-glass-border p-8 shadow-lg hover:shadow-gold/5 hover:bg-glass-surface-hover hover:border-white/10 hover:-translate-y-1 transition-all duration-500 opacity-0 animate-fade-up delay-700 block">
                 <div class="flex justify-between items-start mb-4">
                     <div class="p-2.5 bg-white/5 border border-white/10 rounded-full text-gold">
                         <i data-lucide="database" class="w-6 h-6"></i>
                     </div>
-                    <div class="px-2 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold text-gray-400 uppercase tracking-wider">
-                        Stack
-                    </div>
+                    <div class="px-2 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] font-bold text-gray-400 uppercase tracking-wider">Stack</div>
                 </div>
                 <div>
                     <h3 class="text-2xl font-display font-bold text-white mb-4">Database</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 rounded-lg bg-charcoal/50 border border-white/10 text-xs text-sand font-medium hover:bg-white/10 transition-colors">PostgreSQL</span>
-                        <span class="px-3 py-1 rounded-lg bg-charcoal/50 border border-white/10 text-xs text-gray-300 font-medium hover:bg-white/10 transition-colors">Firebase</span>
-                        <span class="px-3 py-1 rounded-lg bg-charcoal/50 border border-white/10 text-xs text-gray-300 font-medium hover:bg-white/10 transition-colors">Vector DB</span>
-                        <span class="px-3 py-1 rounded-lg bg-charcoal/50 border border-white/10 text-xs text-gray-300 font-medium hover:bg-white/10 transition-colors">Supabase</span>
+                        <span class="px-3 py-1 rounded-lg bg-charcoal/50 border border-white/10 text-xs text-sand font-medium">PostgreSQL</span>
+                        <span class="px-3 py-1 rounded-lg bg-charcoal/50 border border-white/10 text-xs text-gray-300">Firebase</span>
                     </div>
                 </div>
             </a>
@@ -383,90 +345,21 @@
         </main>
         
         <footer class="mt-20 flex justify-between items-center text-white/20 text-xs font-medium uppercase tracking-wider pb-10">
-            <p>© 2025 Mustafa Enes Kayacı</p>
+            <p>© 2026 Mustafa Enes Kayacı</p>
             <p>Built with Glassmorphism</p>
         </footer>
 
     </div>
 
     <!-- MODAL SYSTEM -->
-    <!-- Overlay -->
     <div id="modal-overlay" class="modal-overlay hidden fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-        <!-- Blurred Background -->
         <div onclick="closeModal()" class="absolute inset-0 bg-charcoal/80 backdrop-blur-xl"></div>
-
-        <!-- Modal Content Container -->
         <div class="relative w-full max-w-2xl bg-glass-surface border border-white/10 rounded-[32px] shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300 animate-scale-in max-h-[90vh] flex flex-col" id="modal-container">
-            
-            <!-- Close Button -->
             <button onclick="closeModal()" class="absolute top-4 right-4 z-20 p-2 bg-white/5 hover:bg-white/10 rounded-full text-white transition-colors border border-white/10">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
 
-            <!-- Dynamic Content Sections -->
-            
-            <!-- 1. Certificates Modal -->
-            <div id="modal-certificates" class="hidden flex flex-col h-full">
-                <div class="p-8 border-b border-white/10 bg-gradient-to-r from-white/5 to-transparent">
-                    <h3 class="text-2xl font-display font-bold text-white">Professional Certificates</h3>
-                    <p class="text-sand text-sm uppercase tracking-wider font-medium mt-1">Verified Accomplishments</p>
-                </div>
-                <div class="p-8 overflow-y-auto no-scrollbar space-y-4">
-                    <!-- Certificate Item -->
-                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-gold/30 transition-colors group">
-                        <div class="p-3 rounded-xl bg-blue-500/20 text-blue-400">
-                            <i data-lucide="badge-check" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-lg group-hover:text-gold transition-colors">Microsoft Certified: Azure AI Engineer</h4>
-                            <p class="text-gray-400 text-sm">Microsoft • 2024</p>
-                        </div>
-                    </div>
-                    <!-- Certificate Item -->
-                    <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-gold/30 transition-colors group">
-                        <div class="p-3 rounded-xl bg-orange-500/20 text-orange-400">
-                            <i data-lucide="box" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-lg group-hover:text-gold transition-colors">TensorFlow Developer Certificate</h4>
-                            <p class="text-gray-400 text-sm">Google • 2023</p>
-                        </div>
-                    </div>
-                     <!-- Certificate Item -->
-                     <div class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-gold/30 transition-colors group">
-                        <div class="p-3 rounded-xl bg-yellow-500/20 text-yellow-400">
-                            <i data-lucide="cloud" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <h4 class="text-white font-bold text-lg group-hover:text-gold transition-colors">AWS Certified Cloud Practitioner</h4>
-                            <p class="text-gray-400 text-sm">Amazon Web Services • 2023</p>
-                        </div>
-                    </div>
-                    <div class="pt-4">
-                        <a href="#" class="w-full py-4 rounded-xl bg-white text-charcoal font-bold flex items-center justify-center gap-2 hover:bg-sand transition-colors">
-                            View all 45+ on LinkedIn <i data-lucide="external-link" class="w-4 h-4"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Gallery Modal -->
-            <div id="modal-gallery" class="hidden flex flex-col h-full">
-                <div class="p-8 border-b border-white/10 bg-gradient-to-r from-white/5 to-transparent">
-                    <h3 class="text-2xl font-display font-bold text-white">Workspace Gallery</h3>
-                    <p class="text-sand text-sm uppercase tracking-wider font-medium mt-1">Curated Setups & Wallpapers</p>
-                </div>
-                <div class="p-8 overflow-y-auto no-scrollbar">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=600&auto=format&fit=crop" class="rounded-xl w-full h-48 object-cover hover:scale-[1.02] transition-transform">
-                        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop" class="rounded-xl w-full h-64 object-cover hover:scale-[1.02] transition-transform">
-                        <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?q=80&w=600&auto=format&fit=crop" class="rounded-xl w-full h-56 object-cover hover:scale-[1.02] transition-transform">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=600&auto=format&fit=crop" class="rounded-xl w-full h-40 object-cover hover:scale-[1.02] transition-transform">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Contact Modal -->
+            <!-- 1. Contact Modal -->
             <div id="modal-contact" class="hidden flex flex-col h-full">
                 <div class="p-8 text-center">
                     <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-gold shadow-lg mb-4">
@@ -476,83 +369,65 @@
                     <p class="text-gray-400 mt-2">Research into Reality.</p>
                 </div>
                 <div class="p-8 pt-0 space-y-3">
-                    <!-- Social Links (Linktree) -->
                     <a href="https://linktr.ee/enesyk" target="_blank" class="flex items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-gold/50 transition-all group">
                         <div class="flex items-center gap-4">
-                            <div class="p-2 rounded-lg bg-charcoal text-white">
-                                <i data-lucide="share-2" class="w-5 h-5"></i>
-                            </div>
-                            <span class="font-medium text-lg text-gray-200 group-hover:text-white">Social Links</span>
+                            <div class="p-2 rounded-lg bg-charcoal text-white"><i data-lucide="share-2" class="w-5 h-5"></i></div>
+                            <span class="font-medium text-lg text-gray-200">Social Links</span>
                         </div>
                         <i data-lucide="arrow-right" class="w-5 h-5 text-gray-500 group-hover:text-gold group-hover:translate-x-1 transition-all"></i>
-                    </a>
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/mustafa-enes-kayaci/" target="_blank" class="flex items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/10 hover:bg-blue-600/20 hover:border-blue-500/50 transition-all group">
-                        <div class="flex items-center gap-4">
-                            <div class="p-2 rounded-lg bg-blue-600 text-white">
-                                <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            </div>
-                            <span class="font-medium text-lg text-gray-200 group-hover:text-white">Connect on LinkedIn</span>
-                        </div>
-                        <i data-lucide="arrow-right" class="w-5 h-5 text-gray-500 group-hover:text-white group-hover:translate-x-1 transition-all"></i>
                     </a>
                 </div>
             </div>
 
+            <!-- 2. Positions Modal (NEW) -->
+            <div id="modal-positions" class="hidden flex flex-col h-full">
+                <div class="p-10 text-center border-b border-white/5 bg-gradient-to-b from-white/5 to-transparent">
+                    <div class="w-16 h-16 mx-auto bg-gold/10 rounded-2xl flex items-center justify-center text-gold mb-4 border border-gold/20">
+                        <i data-lucide="award" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-3xl font-display font-bold text-white">Current Roles</h3>
+                    <p class="text-sand text-xs font-bold uppercase tracking-widest mt-2">Leadership & Foundation</p>
+                </div>
+                <div class="p-10 space-y-6">
+                    <div class="flex items-start gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 group hover:border-red-500/30 transition-all">
+                        <div class="p-4 bg-red-500/10 rounded-2xl text-red-400"><i data-lucide="terminal" class="w-8 h-8"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Hack Club Leader</h4>
+                            <p class="text-gray-400 text-sm mt-1">Directing the Raw Logic Hack Club local community under the global Hack Club non-profit framework.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-6 p-6 rounded-3xl bg-white/5 border border-white/10 group hover:border-gold/30 transition-all">
+                        <div class="p-4 bg-gold/10 rounded-2xl text-gold"><i data-lucide="crown" class="w-8 h-8"></i></div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Founder of Raw Logic</h4>
+                            <p class="text-gray-400 text-sm mt-1">Visionary lead at Raw Logic, driving software innovations and AI-centric solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-
-        // Modal Functions
         function openModal(modalId) {
             const overlay = document.getElementById('modal-overlay');
             const allModals = document.querySelectorAll('[id^="modal-"]');
-            
-            // Hide all specific modal contents first
-            allModals.forEach(el => {
-                if(el.id !== 'modal-overlay' && el.id !== 'modal-container') {
-                    el.classList.add('hidden');
-                }
-            });
-
-            // Show the requested modal content
+            allModals.forEach(el => { if(el.id !== 'modal-overlay' && el.id !== 'modal-container') el.classList.add('hidden'); });
             const targetModal = document.getElementById(modalId);
             if(targetModal) {
                 targetModal.classList.remove('hidden');
-                
-                // Show overlay
                 overlay.classList.remove('hidden');
-                // Small delay to allow display:block to apply before opacity transition
-                setTimeout(() => {
-                    overlay.classList.add('active');
-                }, 10);
-
-                // Prevent body scroll
+                setTimeout(() => { overlay.classList.add('active'); }, 10);
                 document.body.classList.add('modal-open');
             }
         }
-
         function closeModal() {
             const overlay = document.getElementById('modal-overlay');
-            
             overlay.classList.remove('active');
-            
-            // Wait for transition to finish before hiding
-            setTimeout(() => {
-                overlay.classList.add('hidden');
-                document.body.classList.remove('modal-open');
-            }, 300);
+            setTimeout(() => { overlay.classList.add('hidden'); document.body.classList.remove('modal-open'); }, 300);
         }
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', function(event) {
-            if (event.key === "Escape") {
-                closeModal();
-            }
-        });
+        document.addEventListener('keydown', function(event) { if (event.key === "Escape") closeModal(); });
     </script>
 </body>
 </html>
