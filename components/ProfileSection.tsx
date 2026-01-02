@@ -1,12 +1,12 @@
 import React from 'react';
 import { BentoCard } from './BentoCard';
-import { ArrowUpRight, Globe, Briefcase } from 'lucide-react';
+import { MapPin, Share2, Briefcase } from 'lucide-react';
 
 export const ProfileSection: React.FC = () => {
   return (
     <BentoCard className="col-span-1 md:col-span-2 lg:col-span-2 row-span-2 flex flex-col justify-between min-h-[400px]" delay={0}>
       <div className="flex justify-between items-start z-10 relative">
-        <div className="relative">
+        <div className="relative cursor-pointer" onClick={() => (window as any).openModal('modal-contact')}>
           <div className="h-28 w-28 rounded-full overflow-hidden border-2 border-white/10 shadow-2xl">
             <img 
               src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=400&auto=format&fit=crop" 
@@ -20,7 +20,7 @@ export const ProfileSection: React.FC = () => {
           </div>
         </div>
         
-        <button className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-[10px] font-bold text-gold uppercase tracking-widest hover:bg-gold/20 transition-all">
+        <button onClick={() => (window as any).openModal('modal-positions')} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold/10 border border-gold/20 text-[10px] font-bold text-gold uppercase tracking-widest hover:bg-gold/20 transition-all">
             <Briefcase size={12} />
             Positions
         </button>
@@ -36,11 +36,15 @@ export const ProfileSection: React.FC = () => {
             </p>
         </div>
         
-        <div className="flex flex-wrap gap-3 pt-2">
-            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/5 text-sm text-gray-300 hover:bg-white/10 transition-colors">
-                <Globe size={14} className="text-gold"/>
-                Türkiye / Worldwide
+        <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-white/5 text-sm text-gray-300">
+                <MapPin size={14} className="text-gold"/>
+                Worldwide
             </span>
+            <button onClick={() => (window as any).openModal('modal-contact')} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold/10 border border-gold/20 text-xs font-bold text-gold uppercase tracking-widest hover:bg-gold/20 transition-all">
+                <Share2 size={14} />
+                Social Links
+            </button>
         </div>
       </div>
       
