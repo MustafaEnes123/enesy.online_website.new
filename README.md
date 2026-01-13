@@ -1,20 +1,60 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Hi there, I'm Mustafa Enes Kayacı! 👋
 
-# Run and deploy your AI Studio app
+### 🚀 AI Engineer | Founder @ Raw Logic | Building Agentic AI Solutions
 
-This contains everything you need to run your app locally.
+> *"Artificial Intelligence is the mission. Actual Intelligence is the method."*
 
-View your app in AI Studio: https://ai.studio/apps/drive/1dCx3mM6mu-lCiv8JqmIWrXrtez0UC7Kc
+---
 
-## Run Locally
+### 👨‍💻 About Me
 
-**Prerequisites:**  Node.js
+I am a **17-year-old AI Engineer** and the Founder of **[Raw Logic](https://enesy.online)**. I operate at the intersection of academic discipline and entrepreneurial innovation. My mission is to build "Second Brain" systems that empower human potential.
 
+* 🎓 **Student:** Student @**Arizona State University**
+* 🔬 **Researcher:** Working on AI-supported learning environments and agentic workflows.
+* 🌍 **Community:** Raw Logic Hack Club Leader & Lead AI Engineer
+* 🌱 **Currently Learning:** Advanced Agentic Patterns, On-Device AI, and Enterprise Automation.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+---
+
+### 🛠️ The Armory (Tech Stack)
+
+**Languages & Frameworks:**
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+
+**AI & Cloud:**
+![Google Gemini](https://img.shields.io/badge/Google%20Gemini-8E75B2?style=for-the-badge&logo=google&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+![Git](https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white)
+
+**Productivity & Tools:**
+![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
+![Odoo](https://img.shields.io/badge/Odoo-714B67?style=for-the-badge&logo=odoo&logoColor=white)
+![Jira](https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white)
+
+---
+
+### 🚀 Featured Project: Cortex (Raw Logic)
+
+**Cortex** is an AI-powered "Second Brain" application designed to revolutionize how students and professionals organize knowledge.
+
+* **Core:** Built with Python & Gemini API.
+* **Mission:** Solving the information overload problem with intelligent summarization and retrieval.
+* **Status:** *In active development & open testing.*
+
+---
+
+### 📫 Connect with Me
+
+* 🌐 **Website:** [enesy.online](https://enesy.online)
+* 💼 **LinkedIn:** [Mustafa Enes Kayacı](https://www.linkedin.com/in/mustafa-enes-kayaci/)
+
+---
+
+<p align="center">
+  <i>"The 'I' in AI is just getting started."</i><br>
+  © 2026 Raw Logic Labs.
+</p>
