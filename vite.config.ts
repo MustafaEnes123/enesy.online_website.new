@@ -18,6 +18,16 @@ export default defineConfig(({ mode }) => {
         alias: {
           '@': path.resolve(__dirname, '.'),
         }
+      },
+      build: {
+        rollupOptions: {
+          input: {
+            main: path.resolve(__dirname, 'index.html'),
+            hackclub: path.resolve(__dirname, 'hackclub.html'),
+            privacy_policy: path.resolve(__dirname, 'privacy_policy.html'),
+            delete_account: path.resolve(__dirname, 'delete_account.html'),
+          },
+        },
       }
     };
 });
