@@ -2,6 +2,7 @@ import React from 'react';
 import { ProfileSection } from './components/ProfileSection';
 import { StatWidget } from './components/StatWidget';
 import { ProjectGallery } from './components/ProjectGallery';
+import { InstitutionWidget } from './components/InstitutionWidget';
 import { BentoCard } from './components/BentoCard';
 import { Award, Code, Mail, Terminal, Users, ArrowRight } from 'lucide-react';
 
@@ -68,16 +69,18 @@ const App: React.FC = () => {
             {/* 4. Project Gallery */}
             <ProjectGallery />
 
-            {/* 5. Contact Footer (Expanded to fill the rest of the grid) */}
-            <BentoCard className="col-span-1 md:col-span-3 lg:col-span-4 flex flex-col md:flex-row items-center justify-between gap-8 py-12 px-10" delay={600}>
-                <div className="text-center md:text-left">
-                    <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-2">Have a project in mind?</h2>
-                    <p className="text-gray-400">Open for collaborations and learning opportunities.</p>
+            {/* Institution Widget */}
+            <InstitutionWidget />
+
+            {/* 5. Contact Footer (Refined to sit side-by-side) */}
+            <BentoCard className="col-span-1 md:col-span-3 lg:col-span-2 flex flex-col items-center justify-center text-center gap-6 py-12 px-10 hover:bg-glass-surface-hover" delay={800}>
+                <div>
+                    <h2 className="text-3xl font-display font-bold text-white mb-2">Have a project?</h2>
+                    <p class="text-gray-400 text-sm">Open for collaborations and learning opportunities.</p>
                 </div>
-                <button className="group relative px-8 py-4 rounded-full bg-mocha border border-white/10 text-white font-bold text-lg transition-all hover:scale-105 hover:shadow-[0_0_40px_-10px_rgba(255,255,255,0.1)] flex items-center gap-3 overflow-hidden">
-                    <span className="relative z-10">Contact Me</span>
-                    <Mail size={18} className="relative z-10 group-hover:rotate-12 transition-transform" />
-                    <div className="absolute inset-0 bg-sand/10 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+                <button className="group relative px-8 py-3 rounded-full bg-mocha border border-white/10 text-white font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-lg hover:shadow-gold/10">
+                    <span className="relative z-10 flex items-center gap-2">Contact Me <Mail size={16} className="group-hover:rotate-12 transition-transform" /></span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-gold/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300" />
                 </button>
             </BentoCard>
 

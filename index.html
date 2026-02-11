@@ -35,7 +35,14 @@
         "@type": "Organization",
         "name": "Raw Logic Labs",
         "url": "https://enesy.online"
-      }
+      },
+      "memberOf": [
+        {
+            "@type": "Organization",
+            "name": "Google Developer Groups",
+            "url": "https://gdg.community.dev/"
+        }
+      ]
     }
     </script>
     
@@ -260,11 +267,35 @@
                 </div>
             </a>
 
+            <!-- 8. GDG Widget -->
+            <div onclick="openModal('modal-gdg')" class="col-span-1 md:col-span-2 lg:col-span-2 row-span-1 flex flex-col justify-between p-8 rounded-[32px] border border-glass-border bg-glass-surface hover:bg-glass-surface-hover hover:border-white/20 transition-all duration-500 opacity-0 animate-fade-up delay-600 group cursor-pointer relative overflow-hidden">
+                <!-- Subtle Background Effect -->
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-white/5 rounded-full blur-[80px] group-hover:bg-white/10 transition-colors duration-500"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="p-3 bg-white/5 border border-white/10 rounded-xl text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+                            <i data-lucide="code" class="w-6 h-6 text-gold"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white tracking-tight">Institution Memberships</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm font-medium">Proud member of the global Google Developer Groups ecosystem. Building the future with Gemini & Cloud.</p>
+                </div>
+                <div class="mt-6 flex items-center gap-2 text-gold text-xs font-bold uppercase tracking-[0.2em]">
+                    <span class="group-hover:text-gold-light transition-colors">Access Logic</span> 
+                    <i data-lucide="chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-all"></i>
+                </div>
+            </div>
 
-
-            <article class="col-span-1 md:col-span-3 lg:col-span-4 py-12 px-10 rounded-[32px] bg-glass-surface border border-glass-border flex flex-col md:flex-row items-center justify-between opacity-0 animate-fade-up delay-800">
-                <h2 class="text-3xl font-display font-bold text-white">Have a project in mind?</h2>
-                <button onclick="openModal('modal-contact')" class="px-8 py-4 rounded-full bg-mocha border border-white/10 text-white font-bold hover:bg-white hover:text-charcoal transition-all">Contact Me</button>
+            <article class="col-span-1 md:col-span-3 lg:col-span-2 py-12 px-10 rounded-[32px] bg-glass-surface border border-glass-border flex flex-col items-center justify-center text-center gap-6 opacity-0 animate-fade-up delay-800 hover:bg-glass-surface-hover transition-colors">
+                <div>
+                    <h2 class="text-3xl font-display font-bold text-white mb-2">Have a project?</h2>
+                    <p class="text-gray-400 text-sm">Open for collaborations and learning opportunities.</p>
+                </div>
+                <button onclick="openModal('modal-contact')" class="group relative px-8 py-3 rounded-full bg-mocha border border-white/10 text-white font-bold overflow-hidden transition-all hover:scale-105 hover:shadow-lg hover:shadow-gold/10">
+                     <span class="relative z-10 flex items-center gap-2">Contact Me <i data-lucide="mail" class="w-4 h-4 group-hover:rotate-12 transition-transform"></i></span>
+                     <div class="absolute inset-0 bg-gradient-to-r from-gold/20 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></div>
+                </button>
             </article>
         </main>
         
@@ -301,6 +332,30 @@
                     </a>
                 </div>
             </div>
+            
+             <div id="modal-gdg" class="hidden text-center relative z-20">
+                <div class="w-24 h-24 mx-auto rounded-full bg-glass-surface border border-white/10 flex items-center justify-center mb-4 shadow-xl">
+                     <svg class="w-12 h-12 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                </div>
+                <h3 class="text-3xl font-display font-bold text-white">Google Developer Groups</h3>
+                <p class="text-sand text-xs font-bold uppercase tracking-widest mt-1 mb-8">Global Ecosystem Member</p>
+                
+                <div class="mt-4 text-left space-y-4">
+                     <p class="text-gray-300 leading-relaxed text-base font-light">
+                        Member of the global Google Developer Groups ecosystem. Connecting with developers worldwide to explore next-gen technologies, with a specific focus on Generative AI (Gemini), Cloud Architecture, and Python. Participating in summits and hackathons to build the future of software.
+                     </p>
+                </div>
+                 <div class="mt-8">
+                    <a href="https://gdg.community.dev/" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold transition-all hover:scale-105">
+                        <span>Visit GDG Platform</span>
+                        <i data-lucide="external-link" class="w-4 h-4 text-gold"></i>
+                    </a>
+                </div>
+            </div>
+
             <div class="absolute -right-20 -top-20 w-64 h-64 bg-gold/10 rounded-full blur-3xl pointer-events-none z-10"></div>
         </div>
     </div>
