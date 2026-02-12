@@ -24,6 +24,7 @@ export default defineConfig(({ mode }) => {
           input: {
             main: path.resolve(__dirname, 'index.html'),
             hackclub: path.resolve(__dirname, 'hackclub.html'),
+            institutions: path.resolve(__dirname, 'institutions.html'),
             privacy_policy: path.resolve(__dirname, 'privacy_policy.html'),
             delete_account: path.resolve(__dirname, 'delete_account.html'),
           },

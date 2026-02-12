@@ -34,6 +34,13 @@ export default {
           'crimson': '#ef4444',
           'glass-border': 'rgba(239, 68, 68, 0.2)',
           'glass-surface': 'rgba(239, 68, 68, 0.03)',
+        },
+        'institutions': {
+          'charcoal': '#0a0807',
+          'mocha': '#1a0f0e',
+          'purple': '#8b5cf6',
+          'glass-border': 'rgba(139, 92, 246, 0.2)',
+          'glass-surface': 'rgba(139, 92, 246, 0.03)',
         }
       },
       animation: {

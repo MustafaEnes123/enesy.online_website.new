@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mustafa Enes Kayacı | Institutions</title>
+
+    <!-- Meta Tags -->
+    <meta name="description" content="Institution memberships and affiliations of Mustafa Enes Kayacı." />
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config (Purple Theme) -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              'charcoal': '#1a1614',
+              'mocha': '#2A2422',
+              'purple-main': '#8b5cf6', // Main purple
+              'purple-light': '#a78bfa',
+              'glass-border': 'rgba(139, 92, 246, 0.2)', // Purple border
+              'glass-surface': 'rgba(139, 92, 246, 0.03)', // Purple surface
+              'glass-surface-hover': 'rgba(139, 92, 246, 0.06)',
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'blob': 'blob 10s infinite',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      body { background-color: #1a1614; overflow-x: hidden; }
+      .noise-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: 0.05; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E"); }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-[#1a1614] text-gray-200 antialiased selection:bg-purple-main selection:text-white relative">
+    
+    <!-- Purple Blobs -->
+    <div class="fixed top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-purple-main/20 rounded-full blur-[120px] animate-blob mix-blend-overlay"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-purple-light/10 rounded-full blur-[100px] animate-blob mix-blend-screen" style="animation-delay: 2s"></div>
+    <div class="noise-overlay"></div>
+
+    <div class="relative z-10 w-full max-w-[1200px] mx-auto p-6 md:p-10 lg:p-16">
+        <!-- Header -->
+        <header class="flex justify-between items-end mb-12 animate-fade-up">
+            <div>
+                <p class="text-purple-light text-xs font-bold uppercase tracking-[0.3em] mb-2">Portfolio 2026</p>
+                <h2 class="text-xl font-medium text-white/80">Institutions & Memberships</h2>
+            </div>
+            <!-- Back link -->
+            <a href="index.html" class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white/50 hover:text-white transition-colors group">
+                <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i> Back to Hub
+            </a>
+        </header>
+
+        <!-- Main Content -->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-[minmax(180px,auto)]">
+            
+            <!-- Google Developer Groups Card -->
+             <div class="col-span-1 md:col-span-2 p-10 rounded-[32px] border border-glass-border bg-glass-surface hover:bg-glass-surface-hover hover:border-purple-main/40 transition-all duration-500 opacity-0 animate-fade-up delay-100 group relative overflow-hidden">
+                <!-- Subtle Background Effect -->
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-purple-main/10 rounded-full blur-[80px] group-hover:bg-purple-main/20 transition-colors duration-500"></div>
+                
+                <div class="relative z-10">
+                    <div class="flex items-center gap-5 mb-8">
+                        <div class="p-4 bg-white/5 border border-white/10 rounded-2xl text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+                             <!-- GDG Logo Icon -->
+                             <svg class="w-10 h-10 text-purple-main" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-4xl font-display font-bold text-white tracking-tight">Google Developer Groups</h3>
+                            <p class="text-purple-light text-xs font-bold uppercase tracking-widest mt-2">Global Ecosystem Member</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-gray-300 text-lg leading-relaxed max-w-3xl font-light mb-8">
+                        Active participant in the global Google Developer Groups ecosystem. Focusing on learning and building with Google technologies, especially in Generative AI (Gemini) and Cloud platforms.
+                    </p>
+
+                    <div class="flex flex-wrap gap-3 mb-8">
+                         <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-main/10 border border-purple-main/20 text-purple-200 text-xs font-bold uppercase tracking-wider shadow-sm">
+                            <i data-lucide="code-2" class="w-4 h-4"></i> Student Developer
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-main/10 border border-purple-main/20 text-purple-200 text-xs font-bold uppercase tracking-wider shadow-sm">
+                            <i data-lucide="zap" class="w-4 h-4"></i> Gemini API
+                        </span>
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-main/10 border border-purple-main/20 text-purple-200 text-xs font-bold uppercase tracking-wider shadow-sm">
+                            <i data-lucide="cloud" class="w-4 h-4"></i> Google Cloud
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="pt-8 border-t border-white/5 flex justify-between items-center relative z-10">
+                     <a href="https://gdg.community.dev/" target="_blank" class="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-widest group/link hover:text-purple-300 transition-colors">
+                        <span>Visit Profile</span> 
+                        <i data-lucide="external-link" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Future placeholders -->
+             <div class="col-span-1 p-8 rounded-[32px] border border-white/5 bg-white/5 flex flex-col justify-center items-center text-center opacity-0 animate-fade-up delay-200 min-h-[250px] hover:bg-white/10 transition-colors">
+                <div class="p-4 bg-white/5 rounded-full mb-4 text-white/20 border border-white/5">
+                    <i data-lucide="plus" class="w-8 h-8"></i>
+                </div>
+                <h4 class="text-white/40 font-bold uppercase tracking-widest text-sm">More Coming Soon</h4>
+                <p class="text-white/20 text-xs mt-2">New affiliations will be added here.</p>
+            </div>
+
+        </main>
+        
+        <footer class="mt-20 flex justify-between text-white/20 text-xs uppercase tracking-wider pb-10">
+            <p>© 2026 Mustafa Enes Kayacı</p>
+        </footer>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
