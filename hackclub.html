@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Raw Logic Hack Club | Innovation Space</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Outfit', 'sans-serif'],
+            },
+            colors: {
+              'charcoal': '#0a0807',
+              'mocha': '#1a0f0e',
+              'crimson': '#ef4444',
+              'glass-border': 'rgba(239, 68, 68, 0.2)',
+              'glass-surface': 'rgba(239, 68, 68, 0.03)',
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'glow': 'glow 4s infinite alternate',
+            },
+            keyframes: {
+              fadeUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              glow: {
+                '0%': { opacity: '0.3' },
+                '100%': { opacity: '0.6' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body { background-color: #0a0807; overflow-x: hidden; }
+      .noise-overlay { position: fixed; inset: 0; pointer-events: none; z-index: 50; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E"); }
+      .red-gradient-bg { background-image: radial-gradient(circle at top left, rgba(239, 68, 68, 0.12), transparent 40%), radial-gradient(circle at bottom right, rgba(239, 68, 68, 0.08), transparent 40%); }
+    </style>
+</head>
+<body class="bg-[#0a0807] text-gray-200 antialiased relative min-h-screen red-gradient-bg">
+    <div class="noise-overlay"></div>
+    
+    <!-- Navbar -->
+    <nav class="relative z-20 w-full max-w-7xl mx-auto p-8 flex justify-between items-center animate-fade-up">
+        <div class="flex items-center gap-3">
+            <div class="p-2.5 bg-red-500 rounded-xl text-white shadow-lg shadow-red-500/20">
+                <i data-lucide="terminal" class="w-6 h-6"></i>
+            </div>
+            <span class="font-display font-bold text-2xl text-white tracking-tight">RL Hack Club</span>
+        </div>
+        <a href="index.html" class="flex items-center gap-2 px-5 py-2.5 rounded-full border border-red-500/20 bg-red-500/5 hover:bg-red-500/10 transition-all text-sm text-red-400 group">
+            <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+            <span>Back to Hub</span>
+        </a>
+    </nav>
+
+    <main class="relative z-10 max-w-5xl mx-auto px-6 py-12 space-y-16">
+        
+        <!-- Hero Section -->
+        <section class="text-center space-y-6 animate-fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-500 text-[10px] font-bold uppercase tracking-widest">
+                <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Non-Profit Organization
+            </div>
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white tracking-tight leading-tight">
+                Where Logic <br/><span class="text-red-500">Meets Code.</span>
+            </h1>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed font-light">
+                Empowering high school and university students in Artificial Intelligence and Computer Science through structured community learning.
+            </p>
+        </section>
+
+        <!-- Mission Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-up" style="animation-delay: 200ms;">
+            <div class="p-10 rounded-[40px] bg-glass-surface border border-glass-border backdrop-blur-3xl">
+                <i data-lucide="brain-circuit" class="w-10 h-10 text-red-500 mb-6"></i>
+                <h3 class="text-2xl font-display font-bold text-white mb-4">Our Mission</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Raw Logic Hack Club is a dedicated ecosystem for students to sharpen their technical skills. We provide the mentorship and resources needed to excel in AI and software engineering, free of charge.
+                </p>
+            </div>
+            <div class="p-10 rounded-[40px] bg-glass-surface border border-glass-border backdrop-blur-3xl border-l-red-500 border-l-4">
+                <i data-lucide="graduation-cap" class="w-10 h-10 text-red-500 mb-6"></i>
+                <h3 class="text-2xl font-display font-bold text-white mb-4">Student Growth</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Focusing on ages 15-23, we bridge the gap between academic theory and practical application. Our community thrives on "learn by building" philosophy.
+                </p>
+            </div>
+        </div>
+
+        <!-- The Pipeline Section -->
+        <section class="p-10 md:p-16 rounded-[48px] bg-gradient-to-br from-red-500/10 to-transparent border border-red-500/20 relative overflow-hidden animate-fade-up" style="animation-delay: 400ms;">
+            <div class="relative z-10 flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 space-y-6">
+                    <div class="p-3 bg-red-500 w-fit rounded-2xl text-white shadow-2xl">
+                        <i data-lucide="rocket" class="w-8 h-8"></i>
+                    </div>
+                    <h2 class="text-4xl font-display font-bold text-white">The Raw Logic <br/>Main Project</h2>
+                    <p class="text-lg text-gray-400">
+                        Top-tier production happens here. Students who demonstrate commitment and skill over a 6-month period gain the exclusive right to work on the <strong>Raw Logic Main Project</strong>.
+                    </p>
+                    <div class="flex flex-col gap-4 pt-4">
+                        <div class="flex items-start gap-4">
+                            <div class="h-6 w-6 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center text-red-500 text-xs font-bold mt-1">1</div>
+                            <p class="text-sm text-gray-300">Join the Hack Club and complete core AI/CS training modules.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="h-6 w-6 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center text-red-500 text-xs font-bold mt-1">2</div>
+                            <p class="text-sm text-gray-300">6 Months of active community contribution and project building.</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="h-6 w-6 rounded-full bg-red-500 border border-red-500 flex items-center justify-center text-white text-xs font-bold mt-1">3</div>
+                            <p class="text-sm text-gray-300 font-bold">Promotion to the Raw Logic Labs Main Project core team.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="aspect-square rounded-3xl bg-red-500/5 border border-red-500/10 flex flex-col items-center justify-center p-6 text-center">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-red-500 mb-4"></i>
+                        <span class="text-sm font-bold text-white">Certification</span>
+                    </div>
+                    <div class="aspect-square rounded-3xl bg-red-500/5 border border-red-500/10 flex flex-col items-center justify-center p-6 text-center">
+                        <i data-lucide="code-2" class="w-10 h-10 text-red-500 mb-4"></i>
+                        <span class="text-sm font-bold text-white">Real Projects</span>
+                    </div>
+                    <div class="aspect-square rounded-3xl bg-red-500/5 border border-red-500/10 flex flex-col items-center justify-center p-6 text-center">
+                        <i data-lucide="cpu" class="w-10 h-10 text-red-500 mb-4"></i>
+                        <span class="text-sm font-bold text-white">AI Research</span>
+                    </div>
+                    <div class="aspect-square rounded-3xl bg-red-500/5 border border-red-500/10 flex flex-col items-center justify-center p-6 text-center">
+                        <i data-lucide="globe" class="w-10 h-10 text-red-500 mb-4"></i>
+                        <span class="text-sm font-bold text-white">Impact</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Background Glow -->
+            <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-red-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+        </section>
+
+        <!-- Founder Footer -->
+        <footer class="pt-20 border-t border-red-500/10 text-center space-y-6">
+            <div class="flex flex-col items-center gap-4">
+                <div class="w-16 h-16 rounded-full border-2 border-red-500/30 overflow-hidden shadow-2xl">
+                    <img src="components/profile.jpg" alt="Mustafa Enes Kayacı" class="w-full h-full object-cover" onerror="this.src='https://api.dicebear.com/7.x/avataaars/svg?seed=Enes'"/>
+                </div>
+                <div>
+                    <p class="text-red-500 text-xs font-bold uppercase tracking-widest">Founder & Lead Mentor</p>
+                    <h4 class="text-2xl font-display font-bold text-white">Mustafa Enes Kayacı</h4>
+                </div>
+            </div>
+            <p class="text-white/10 text-[10px] uppercase tracking-[0.3em] font-bold">
+                Raw Logic • Hack Club Local Chapter
+            </p>
+        </footer>
+    </main>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
