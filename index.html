@@ -64,7 +64,8 @@
       {"@type": "Organization", "name": "Google Developer Groups", "url": "https://gdg.community.dev/"},
       {"@type": "Organization", "name": "Notion Campus Ambassadors", "url": "https://www.notion.so/campus"},
       {"@type": "Organization", "name": "Y Combinator", "url": "https://www.ycombinator.com"},
-      {"@type": "Organization", "name": "Teknofest", "url": "https://teknofest.org"}
+      {"@type": "Organization", "name": "Teknofest", "url": "https://teknofest.org"},
+      {"@type": "Organization", "name": "The Linux Foundation", "url": "https://www.linuxfoundation.org"}
     ]
   }
   </script>
@@ -78,6 +79,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
     }
 
     html, body {
@@ -921,6 +923,12 @@
     })();
     /* ── Organizations modal ── */
     const ORG_DATA = [
+      {
+        title: 'Experience',
+        items: [
+          { logo: 'Logos/linux_foundation.png', name: 'The Linux Foundation', role: 'Software Engineer' },
+        ]
+      },
       {
         title: 'Education',
         items: [
